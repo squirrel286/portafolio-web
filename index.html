@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Randy Cortinez — Full Stack Developer in Training</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            zinc: {
+              950: '#09090b',
+              900: '#121215',
+              850: '#18181b',
+              800: '#27272a',
+              700: '#3f3f46',
+            },
+            accent: {
+              500: '#3b82f6',
+              600: '#2563eb',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #09090b;
+      color: #a1a1aa;
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    html:not(.dark) body {
+      background-color: #f8fafc;
+      color: #334155;
+    }
+
+    html:not(.dark) header {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    html:not(.dark) .text-zinc-100 {
+      color: #0f172a;
+    }
+
+    html:not(.dark) .bg-zinc-900\/40 {
+      background-color: #ffffff;
+      border-color: #e2e8f0;
+    }
+
+    ::selection {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+
+    .border-subtle {
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+
+<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-accent-600 selection:text-white">
+
+  <!-- TOP NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-subtle">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#"
+        class="font-mono text-xs tracking-wider text-zinc-100 hover:text-accent-500 transition-colors uppercase">
+        randyglock<span class="text-accent-500">_</span>
+      </a>
+
+      <nav class="flex items-center space-x-6 text-xs font-mono">
+        <a href="#proyectos" class="hover:text-zinc-100 transition-colors">/proyectos</a>
+        <a href="#experiencia" class="hover:text-zinc-100 transition-colors">/aprendizaje</a>
+        <a href="#contacto" class="hover:text-zinc-100 transition-colors">/contacto</a>
+        
+        <!-- Cambio de Tema -->
+        <button id="themeToggleBtn" class="p-1.5 rounded-md border border-zinc-800 hover:border-zinc-600 transition-colors text-zinc-300">
+          🌙
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 md:py-20 space-y-24">
+
+    <!-- HERO SECTION -->
+    <section class="space-y-6">
+      <div
+        class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/60 text-xs font-mono text-zinc-400">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Estudiante de 4to Medio & Full Stack Developer en formación</span>
+      </div>
+
+      <h1 class="text-3xl md:text-5xl font-bold text-zinc-100 tracking-tight leading-tight max-w-3xl">
+        Desarrollo aplicaciones web modernas con enfoque en arquitectura limpia y funcionalidad.
+      </h1>
+
+      <p class="text-zinc-400 text-base md:text-lg max-w-2xl font-normal leading-relaxed">
+        Hola, soy Randy Cortinez. Tengo 17 años y actualmente me especializo en desarrollo Full Stack utilizando Python,
+        Flask, MySQL, JavaScript y Git. Apasionado por resolver problemas reales a través del código.
+      </p>
+
+      <!-- Contadores Animados -->
+      <div class="grid grid-cols-3 gap-4 max-w-md pt-2 font-mono text-xs">
+        <div class="p-3 bg-zinc-900/50 border border-zinc-800 rounded-lg text-center">
+          <div class="text-xl font-bold text-accent-500 counter" data-target="3">0</div>
+          <div class="text-[10px] text-zinc-400">Proyectos Destacados</div>
+        </div>
+        <div class="p-3 bg-zinc-900/50 border border-zinc-800 rounded-lg text-center">
+          <div class="text-xl font-bold text-accent-500 counter" data-target="6">0</div>
+          <div class="text-[10px] text-zinc-400">Tecnologías</div>
+        </div>
+        <div class="p-3 bg-zinc-900/50 border border-zinc-800 rounded-lg text-center">
+          <div class="text-xl font-bold text-accent-500 counter" data-target="100">0</div>
+          <div class="text-[10px] text-zinc-400">% Compromiso</div>
+        </div>
+      </div>
+
+      <div class="pt-2 flex flex-wrap gap-4 items-center font-mono text-xs">
+        <a href="https://github.com/squirrel286" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center space-x-2 bg-zinc-100 text-zinc-950 font-medium px-4 py-2.5 rounded hover:bg-white transition-colors">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/randy-cortinez-166336291/" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center space-x-2 border border-zinc-800 text-zinc-300 font-medium px-4 py-2.5 rounded hover:border-zinc-700 hover:text-zinc-100 transition-colors">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </section>
+
+    <hr class="border-subtle" />
+
+    <section id="proyectos" class="space-y-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-zinc-400">/ Proyectos Destacados</h2>
+        
+        <!-- Filtro de Proyectos -->
+        <div class="flex space-x-2 font-mono text-xs">
+          <button class="filter-btn active px-3 py-1 rounded border border-accent-500 bg-accent-500/10 text-accent-500" data-filter="all">Todos</button>
+          <button class="filter-btn px-3 py-1 rounded border border-zinc-800 hover:border-zinc-700 text-zinc-400" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn px-3 py-1 rounded border border-zinc-800 hover:border-zinc-700 text-zinc-400" data-filter="backend">Backend</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Proyecto 1 -->
+        <article
+          data-category="fullstack"
+          class="project-card cursor-pointer group bg-zinc-900/40 border border-zinc-800/80 rounded-xl overflow-hidden hover:border-zinc-700 transition-all flex flex-col justify-between"
+          data-title="VoluntaMe"
+          data-desc="Aplicación web diseñada para conectar personas con iniciativas comunitarias. Desarrollada íntegramente como examen de certificación, enfocada en arquitectura escalable y seguridad."
+          data-tech="Python, Flask, MySQL, MVC"
+          data-repo="https://github.com/squirrel286/Skillnest_fullStack_Python/tree/main/python/Core/examen_voluntame_randy_cortinez_11-02-2026">
+          <div class="p-5 space-y-4">
+
+            <div
+              class="relative aspect-video bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800/80 group-hover:border-zinc-700 transition-colors">
+              <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80"
+                alt="VoluntaMe Preview"
+                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono text-accent-500 uppercase tracking-wider font-semibold">Examen Fullstack</span>
+                <span class="text-xs font-mono text-zinc-400">2026</span>
+              </div>
+              <h3 class="text-lg font-semibold text-zinc-100 group-hover:text-accent-500 transition-colors">
+                VoluntaMe
+              </h3>
+              <p class="text-xs text-zinc-400 font-mono mt-1">Plataforma de Gestión de Voluntariado</p>
+            </div>
+
+            <p class="text-xs text-zinc-400 leading-relaxed font-sans">
+              Aplicación web diseñada para conectar personas con iniciativas comunitarias. Desarrollada íntegramente como examen de certificación, enfocada en arquitectura escalable y seguridad.
+            </p>
+          </div>
+
+          <div class="p-5 pt-0 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Python</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Flask</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MySQL</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MVC</span>
+            </div>
+
+            <span class="inline-flex items-center text-xs font-mono text-zinc-300 group-hover:text-accent-500 transition-colors space-x-1.5">
+              <span>Haz clic para ver detalles</span> →
+            </span>
+          </div>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article
+          data-category="backend"
+          class="project-card cursor-pointer group bg-zinc-900/40 border border-zinc-800/80 rounded-xl overflow-hidden hover:border-zinc-700 transition-all flex flex-col justify-between"
+          data-title="Validación de Email + MySQL"
+          data-desc="Integración de validación de formularios mediante Expresiones Regulares (Regex), mensajes flash, manejo de sesiones y sentencias preparadas para impedir datos anómalos."
+          data-tech="Python, Flask, Regex, MySQL"
+          data-repo="https://github.com/squirrel286/Skillnest_fullStack_Python/tree/main/python/flask/fundamentos/30.-Validaci%C3%B3n_de_email_con_base_de_datos">
+          <div class="p-5 space-y-4">
+            <div
+              class="relative aspect-video bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800/80 group-hover:border-zinc-700 transition-colors">
+              <img src="img/validacion email.png"
+                alt="Validación Email Preview"
+                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider">Módulo Backend</span>
+                <span class="text-xs font-mono text-zinc-400">2026</span>
+              </div>
+              <h3 class="text-lg font-semibold text-zinc-100 group-hover:text-accent-500 transition-colors">
+                Validación de Email + MySQL
+              </h3>
+              <p class="text-xs text-zinc-400 font-mono mt-1">Sistema Modularizado de Validación</p>
+            </div>
+
+            <p class="text-xs text-zinc-400 leading-relaxed font-sans">
+              Integración de validación de formularios mediante Expresiones Regulares (Regex), mensajes flash, manejo de
+              sesiones y sentencias preparadas para impedir datos anómalos.
+            </p>
+          </div>
+
+          <div class="p-5 pt-0 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Python</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Flask</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Regex</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MySQL</span>
+            </div>
+
+            <span class="inline-flex items-center text-xs font-mono text-zinc-300 group-hover:text-accent-500 transition-colors space-x-1.5">
+              <span>Haz clic para ver detalles</span> →
+            </span>
+          </div>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article
+          data-category="fullstack"
+          class="project-card cursor-pointer group bg-zinc-900/40 border border-zinc-800/80 rounded-xl overflow-hidden hover:border-zinc-700 transition-all flex flex-col justify-between md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full"
+          data-title="Pedidos de Arepas"
+          data-desc="Sistema modularizado de gestión de pedidos gastronómicos. Arquitectura MVC completa con conexión segura a bases de datos relacionales y validación de órdenes en tiempo real."
+          data-tech="Flask, MySQL, MVC Pattern"
+          data-repo="https://github.com/squirrel286/Skillnest_fullStack_Python/tree/main/python/flask/fundamentos/29.-Pedidos_de_arepas">
+          <div class="p-5 space-y-4">
+            <div
+              class="relative aspect-video bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800/80 group-hover:border-zinc-700 transition-colors">
+              <img src="img/arepas.jpg"
+                alt="Pedidos Arepas Preview"
+                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider">Aplicación Web</span>
+                <span class="text-xs font-mono text-zinc-400">2026</span>
+              </div>
+              <h3 class="text-lg font-semibold text-zinc-100 group-hover:text-accent-500 transition-colors">
+                Pedidos de Arepas
+              </h3>
+              <p class="text-xs text-zinc-400 font-mono mt-1">Flask + MySQL + MVC + Validación</p>
+            </div>
+
+            <p class="text-xs text-zinc-400 leading-relaxed font-sans">
+              Sistema modularizado de gestión de pedidos gastronómicos. Arquitectura MVC completa con conexión segura a
+              bases de datos relacionales y validación de órdenes en tiempo real.
+            </p>
+          </div>
+
+          <div class="p-5 pt-0 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Flask</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MySQL</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Pattern MVC</span>
+            </div>
+
+            <span class="inline-flex items-center text-xs font-mono text-zinc-300 group-hover:text-accent-500 transition-colors space-x-1.5">
+              <span>Haz clic para ver detalles</span> →
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="border-subtle" />
+
+    <section id="experiencia" class="space-y-8">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-zinc-400">/ Recorrido & Aprendizaje</h2>
+        <span class="text-xs font-mono text-zinc-400">Liceo TP</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <!-- Canvas DVD -->
+        <div
+          class="md:col-span-6 bg-slate-50 border border-slate-200 rounded-2xl p-4 shadow-inner relative overflow-hidden h-80 flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-2 z-10">
+          </div>
+
+          <div id="canvas-container"
+            class="relative w-full h-full overflow-hidden rounded-xl bg-white border border-slate-100">
+            <canvas id="dvdCanvas" class="w-full h-full block"></canvas>
+          </div>
+
+        </div>
+
+        <div class="md:col-span-6 space-y-5">
+          <div
+            class="inline-block px-2.5 py-1 bg-accent-500/10 border border-accent-500/20 text-accent-500 font-mono text-xs rounded">
+            Liceo Técnico Profesional — 4to Medio
+          </div>
+
+          <h3 class="text-2xl font-bold text-zinc-100 tracking-tight">
+            Aprendizaje práctico, proyectos individuales y trabajo en equipo.
+          </h3>
+
+          <div class="space-y-4 text-sm text-zinc-400 leading-relaxed font-sans">
+            <p>
+              Durante mi paso por el liceo he adquirido una sólida base teórica y práctica en desarrollo de software. Mi
+              formación combina el aprendizaje autodidacta con proyectos desafiantes desarrollados tanto de forma
+              individual como colaborativa.
+            </p>
+            <p>
+              Destaco mi experiencia participando activamente en la <strong class="text-zinc-200 font-semibold">Feria TP
+                (Técnico Profesional)</strong>, donde junto a mi equipo de trabajo diseñamos, construimos y expusimos
+              soluciones tecnológicas integrales, perfeccionando mis habilidades de comunicación, metodologías ágiles y
+              control de versiones.
+            </p>
+          </div>
+
+          <!-- Mostrar / Ocultar Información -->
+          <div>
+            <button id="toggleInfoBtn" class="text-xs font-mono text-accent-500 hover:underline inline-flex items-center gap-1">
+              <span>+ Ver detalles de materias aprendidas</span>
+            </button>
+            <div id="extraInfo" class="hidden mt-3 p-3 bg-zinc-900/40 border border-zinc-800 rounded-lg text-xs font-mono space-y-1">
+              <p>• Modelamiento de bases de datos relacionales (MySQL)</p>
+              <p>• Programación Orientada a Objetos en Python</p>
+              <p>• Construcción de APIs y lógica Backend con Flask</p>
+              <p>• Control de versiones colaborativo con Git y GitHub</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-2 font-mono text-xs text-zinc-400">
+            <span class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 rounded"># FeriaTP</span>
+            <span class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 rounded"># TrabajosEnEquipo</span>
+            <span class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 rounded"># FullStackDev</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-subtle" />
+
+    <!-- Formulario Interactivo de Contacto -->
+    <section id="contacto" class="space-y-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-zinc-400">/ Contacto</h2>
+
+      <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-8 space-y-6">
+        <div class="space-y-1">
+          <h3 class="text-xl font-semibold text-zinc-100">¿Tienes algún proyecto o consulta?</h3>
+          <p class="text-sm text-zinc-400">Estoy disponible para colaborar o charlar sobre desarrollo web.</p>
+        </div>
+
+        <form id="contactForm" class="space-y-4 font-mono text-xs max-w-xl">
+          <div class="space-y-1">
+            <label class="block text-zinc-300">Nombre</label>
+            <input type="text" id="formName" required placeholder="Tu nombre" class="w-full bg-zinc-950 border border-zinc-800 rounded p-2.5 text-zinc-100 focus:outline-none focus:border-accent-500" />
+          </div>
+
+          <div class="space-y-1">
+            <label class="block text-zinc-300">Correo Electrónico</label>
+            <input type="email" id="formEmail" required placeholder="tu@email.com" class="w-full bg-zinc-950 border border-zinc-800 rounded p-2.5 text-zinc-100 focus:outline-none focus:border-accent-500" />
+          </div>
+
+          <div class="space-y-1">
+            <label class="block text-zinc-300">Mensaje</label>
+            <textarea id="formMessage" rows="4" required placeholder="Escribe tu mensaje..." class="w-full bg-zinc-950 border border-zinc-800 rounded p-2.5 text-zinc-100 focus:outline-none focus:border-accent-500"></textarea>
+          </div>
+
+          <button type="submit" class="bg-accent-500 hover:bg-accent-600 text-white font-medium px-5 py-2.5 rounded transition-colors">
+            Enviar Mensaje
+          </button>
+          
+          <div id="formFeedback" class="hidden text-emerald-400 font-mono text-xs pt-1">
+            ✓ ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
+          </div>
+        </form>
+
+        <div class="flex items-center space-x-4 pt-4 border-t border-zinc-800/60">
+          <a href="https://github.com/squirrel286" target="_blank"
+            class="p-3 bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/50 rounded-lg text-zinc-200 transition-colors"
+            title="GitHub">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/randy-cortinez-166336291/" target="_blank"
+            class="p-3 bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/50 rounded-lg text-zinc-200 transition-colors"
+            title="LinkedIn">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-subtle py-8 text-center text-xs font-mono text-zinc-400">
+    <p>© 2026 Randy Cortinez.</p>
+  </footer>
+
+  <!-- Modal / Ventana Emergente con enlace dinámico a GitHub -->
+  <div id="projectModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-zinc-900 border border-zinc-800 max-w-lg w-full p-6 rounded-2xl relative space-y-4">
+      <button id="closeModal" class="absolute top-4 right-4 text-zinc-400 hover:text-white font-mono text-base">✕</button>
+      <h3 id="modalTitle" class="text-xl font-bold text-zinc-100 font-mono"></h3>
+      <p id="modalTech" class="text-xs text-accent-500 font-mono"></p>
+      <p id="modalDesc" class="text-sm text-zinc-300 font-sans leading-relaxed"></p>
+      
+      <div class="pt-3 border-t border-zinc-800">
+        <a id="modalRepoLink" href="#" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center space-x-2 text-xs font-mono text-accent-500 hover:underline">
+          <span>Ver repositorio en GitHub</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+      // --- ANIMACIÓN CANVAS DVD ---
+      const canvas = document.getElementById('dvdCanvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        const container = document.getElementById('canvas-container');
+
+        function resizeCanvas() {
+          if (!container) return;
+          canvas.width = container.clientWidth;
+          canvas.height = container.clientHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const iconsData = [
+          { name: 'HTML5', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+          { name: 'CSS3', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+          { name: 'JavaScript', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+          { name: 'Python', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+          { name: 'Flask', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
+          { name: 'GitHub', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' }
+        ];
+
+        const icons = [];
+        const ICON_SIZE = 34;
+
+        iconsData.forEach((iconInfo, index) => {
+          const img = new Image();
+          img.src = iconInfo.url;
+          const speed = 0.6;
+          const angle = (index * (Math.PI * 2 / iconsData.length)) + 0.4;
+          
+          icons.push({
+            img: img,
+            name: iconInfo.name,
+            x: Math.random() * (canvas.width - ICON_SIZE - 20) + 10,
+            y: Math.random() * (canvas.height - ICON_SIZE - 20) + 10,
+            dx: Math.cos(angle) * speed,
+            dy: Math.sin(angle) * speed,
+            loaded: false
+          });
+
+          img.onload = () => {
+            icons[index].loaded = true;
+          };
+        });
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          icons.forEach(icon => {
+            icon.x += icon.dx;
+            icon.y += icon.dy;
+
+            if (icon.x <= 0 || icon.x + ICON_SIZE >= canvas.width) {
+              icon.dx *= -1;
+              icon.x = Math.max(0, Math.min(icon.x, canvas.width - ICON_SIZE));
+            }
+            if (icon.y <= 0 || icon.y + ICON_SIZE >= canvas.height) {
+              icon.dy *= -1;
+              icon.y = Math.max(0, Math.min(icon.y, canvas.height - ICON_SIZE));
+            }
+
+            if (icon.loaded) {
+              ctx.drawImage(icon.img, icon.x, icon.y, ICON_SIZE, ICON_SIZE);
+            }
+          });
+          requestAnimationFrame(animate);
+        }
+        animate();
+      }
+
+      // --- Cambio de Tema ---
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      themeToggleBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        themeToggleBtn.textContent = isDark ? '🌙' : '☀️';
+      });
+
+      // --- Contadores Animados ---
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const increment = target / 30;
+        const updateCounter = () => {
+          count += increment;
+          if (count < target) {
+            counter.innerText = Math.ceil(count);
+            setTimeout(updateCounter, 40);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCounter();
+      });
+
+      // --- Filtro de Proyectos ---
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('active', 'border-accent-500', 'bg-accent-500/10', 'text-accent-500');
+            b.classList.add('border-zinc-800', 'text-zinc-400');
+          });
+
+          btn.classList.add('active', 'border-accent-500', 'bg-accent-500/10', 'text-accent-500');
+          btn.classList.remove('border-zinc-800', 'text-zinc-400');
+
+          const filter = btn.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // --- Mostrar / Ocultar Información ---
+      const toggleInfoBtn = document.getElementById('toggleInfoBtn');
+      const extraInfo = document.getElementById('extraInfo');
+
+      toggleInfoBtn.addEventListener('click', () => {
+        const isHidden = extraInfo.classList.contains('hidden');
+        if (isHidden) {
+          extraInfo.classList.remove('hidden');
+          toggleInfoBtn.querySelector('span').textContent = '- Ocultar detalles de materias aprendidas';
+        } else {
+          extraInfo.classList.add('hidden');
+          toggleInfoBtn.querySelector('span').textContent = '+ Ver detalles de materias aprendidas';
+        }
+      });
+
+      // --- Formulario Interactivo ---
+      const contactForm = document.getElementById('contactForm');
+      const formFeedback = document.getElementById('formFeedback');
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        formFeedback.classList.remove('hidden');
+        contactForm.reset();
+        setTimeout(() => {
+          formFeedback.classList.add('hidden');
+        }, 4000);
+      });
+
+      // --- Modal / Ventana Emergente + Enlace a GitHub ---
+      const modal = document.getElementById('projectModal');
+      const closeModal = document.getElementById('closeModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalTech = document.getElementById('modalTech');
+      const modalDesc = document.getElementById('modalDesc');
+      const modalRepoLink = document.getElementById('modalRepoLink');
+
+      projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+          modalTitle.textContent = card.getAttribute('data-title');
+          modalTech.textContent = `Tecnologías: ${card.getAttribute('data-tech')}`;
+          modalDesc.textContent = card.getAttribute('data-desc');
+          modalRepoLink.setAttribute('href', card.getAttribute('data-repo'));
+          modal.classList.remove('hidden');
+        });
+      });
+
+      closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>
