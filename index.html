@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Randy Cortinez — Full Stack Developer in Training</title>
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -83,7 +81,6 @@
 
 <body class="antialiased min-h-screen flex flex-col justify-between selection:bg-accent-600 selection:text-white">
 
-  <!-- TOP NAVIGATION -->
   <header class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-subtle">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#"
@@ -95,9 +92,9 @@
         <a href="#proyectos" class="hover:text-zinc-100 transition-colors">/proyectos</a>
         <a href="#experiencia" class="hover:text-zinc-100 transition-colors">/aprendizaje</a>
         <a href="#contacto" class="hover:text-zinc-100 transition-colors">/contacto</a>
-        
-        <!-- Cambio de Tema -->
-        <button id="themeToggleBtn" class="p-1.5 rounded-md border border-zinc-800 hover:border-zinc-600 transition-colors text-zinc-300">
+
+        <button id="themeToggleBtn"
+          class="p-1.5 rounded-md border border-zinc-800 hover:border-zinc-600 transition-colors text-zinc-300">
           🌙
         </button>
       </nav>
@@ -106,7 +103,6 @@
 
   <main class="max-w-6xl mx-auto px-6 py-12 md:py-20 space-y-24">
 
-    <!-- HERO SECTION -->
     <section class="space-y-6">
       <div
         class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/60 text-xs font-mono text-zinc-400">
@@ -123,7 +119,6 @@
         Flask, MySQL, JavaScript y Git. Apasionado por resolver problemas reales a través del código.
       </p>
 
-      <!-- Contadores Animados -->
       <div class="grid grid-cols-3 gap-4 max-w-md pt-2 font-mono text-xs">
         <div class="p-3 bg-zinc-900/50 border border-zinc-800 rounded-lg text-center">
           <div class="text-xl font-bold text-accent-500 counter" data-target="3">0</div>
@@ -164,20 +159,20 @@
     <section id="proyectos" class="space-y-8">
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <h2 class="text-xs font-mono uppercase tracking-widest text-zinc-400">/ Proyectos Destacados</h2>
-        
-        <!-- Filtro de Proyectos -->
+
         <div class="flex space-x-2 font-mono text-xs">
-          <button class="filter-btn active px-3 py-1 rounded border border-accent-500 bg-accent-500/10 text-accent-500" data-filter="all">Todos</button>
-          <button class="filter-btn px-3 py-1 rounded border border-zinc-800 hover:border-zinc-700 text-zinc-400" data-filter="fullstack">Full Stack</button>
-          <button class="filter-btn px-3 py-1 rounded border border-zinc-800 hover:border-zinc-700 text-zinc-400" data-filter="backend">Backend</button>
+          <button class="filter-btn active px-3 py-1 rounded border border-accent-500 bg-accent-500/10 text-accent-500"
+            data-filter="all">Todos</button>
+          <button class="filter-btn px-3 py-1 rounded border border-zinc-800 hover:border-zinc-700 text-zinc-400"
+            data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn px-3 py-1 rounded border border-zinc-800 hover:border-zinc-700 text-zinc-400"
+            data-filter="backend">Backend</button>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Proyecto 1 -->
-        <article
-          data-category="fullstack"
+        <article data-category="fullstack"
           class="project-card cursor-pointer group bg-zinc-900/40 border border-zinc-800/80 rounded-xl overflow-hidden hover:border-zinc-700 transition-all flex flex-col justify-between"
           data-title="VoluntaMe"
           data-desc="Aplicación web diseñada para conectar personas con iniciativas comunitarias. Desarrollada íntegramente como examen de certificación, enfocada en arquitectura escalable y seguridad."
@@ -194,7 +189,8 @@
 
             <div>
               <div class="flex items-center justify-between mb-1.5">
-                <span class="text-[10px] font-mono text-accent-500 uppercase tracking-wider font-semibold">Examen Fullstack</span>
+                <span class="text-[10px] font-mono text-accent-500 uppercase tracking-wider font-semibold">Examen
+                  Fullstack</span>
                 <span class="text-xs font-mono text-zinc-400">2026</span>
               </div>
               <h3 class="text-lg font-semibold text-zinc-100 group-hover:text-accent-500 transition-colors">
@@ -204,27 +200,31 @@
             </div>
 
             <p class="text-xs text-zinc-400 leading-relaxed font-sans">
-              Aplicación web diseñada para conectar personas con iniciativas comunitarias. Desarrollada íntegramente como examen de certificación, enfocada en arquitectura escalable y seguridad.
+              Aplicación web diseñada para conectar personas con iniciativas comunitarias. Desarrollada íntegramente
+              como examen de certificación, enfocada en arquitectura escalable y seguridad.
             </p>
           </div>
 
           <div class="p-5 pt-0 space-y-4">
             <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Python</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Flask</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MySQL</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MVC</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Python</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Flask</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MySQL</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MVC</span>
             </div>
 
-            <span class="inline-flex items-center text-xs font-mono text-zinc-300 group-hover:text-accent-500 transition-colors space-x-1.5">
+            <span
+              class="inline-flex items-center text-xs font-mono text-zinc-300 group-hover:text-accent-500 transition-colors space-x-1.5">
               <span>Haz clic para ver detalles</span> →
             </span>
           </div>
         </article>
 
-        <!-- Proyecto 2 -->
-        <article
-          data-category="backend"
+        <article data-category="backend"
           class="project-card cursor-pointer group bg-zinc-900/40 border border-zinc-800/80 rounded-xl overflow-hidden hover:border-zinc-700 transition-all flex flex-col justify-between"
           data-title="Validación de Email + MySQL"
           data-desc="Integración de validación de formularios mediante Expresiones Regulares (Regex), mensajes flash, manejo de sesiones y sentencias preparadas para impedir datos anómalos."
@@ -233,8 +233,7 @@
           <div class="p-5 space-y-4">
             <div
               class="relative aspect-video bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800/80 group-hover:border-zinc-700 transition-colors">
-              <img src="img/validacion email.png"
-                alt="Validación Email Preview"
+              <img src="img/validacion email.png" alt="Validación Email Preview"
                 class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" />
             </div>
 
@@ -257,21 +256,24 @@
 
           <div class="p-5 pt-0 space-y-4">
             <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Python</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Flask</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Regex</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MySQL</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Python</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Flask</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Regex</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MySQL</span>
             </div>
 
-            <span class="inline-flex items-center text-xs font-mono text-zinc-300 group-hover:text-accent-500 transition-colors space-x-1.5">
+            <span
+              class="inline-flex items-center text-xs font-mono text-zinc-300 group-hover:text-accent-500 transition-colors space-x-1.5">
               <span>Haz clic para ver detalles</span> →
             </span>
           </div>
         </article>
 
-        <!-- Proyecto 3 -->
-        <article
-          data-category="fullstack"
+        <article data-category="fullstack"
           class="project-card cursor-pointer group bg-zinc-900/40 border border-zinc-800/80 rounded-xl overflow-hidden hover:border-zinc-700 transition-all flex flex-col justify-between md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full"
           data-title="Pedidos de Arepas"
           data-desc="Sistema modularizado de gestión de pedidos gastronómicos. Arquitectura MVC completa con conexión segura a bases de datos relacionales y validación de órdenes en tiempo real."
@@ -280,8 +282,7 @@
           <div class="p-5 space-y-4">
             <div
               class="relative aspect-video bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800/80 group-hover:border-zinc-700 transition-colors">
-              <img src="img/arepas.jpg"
-                alt="Pedidos Arepas Preview"
+              <img src="img/arepas.jpg" alt="Pedidos Arepas Preview"
                 class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" />
             </div>
 
@@ -304,12 +305,17 @@
 
           <div class="p-5 pt-0 space-y-4">
             <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Flask</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MySQL</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Pattern MVC</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Flask</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">MySQL</span>
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono bg-zinc-800/60 text-zinc-300 rounded border border-zinc-700/50">Pattern
+                MVC</span>
             </div>
 
-            <span class="inline-flex items-center text-xs font-mono text-zinc-300 group-hover:text-accent-500 transition-colors space-x-1.5">
+            <span
+              class="inline-flex items-center text-xs font-mono text-zinc-300 group-hover:text-accent-500 transition-colors space-x-1.5">
               <span>Haz clic para ver detalles</span> →
             </span>
           </div>
@@ -327,7 +333,6 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        <!-- Canvas DVD -->
         <div
           class="md:col-span-6 bg-slate-50 border border-slate-200 rounded-2xl p-4 shadow-inner relative overflow-hidden h-80 flex flex-col justify-between">
           <div class="flex items-center justify-between mb-2 z-10">
@@ -364,12 +369,13 @@
             </p>
           </div>
 
-          <!-- Mostrar / Ocultar Información -->
           <div>
-            <button id="toggleInfoBtn" class="text-xs font-mono text-accent-500 hover:underline inline-flex items-center gap-1">
+            <button id="toggleInfoBtn"
+              class="text-xs font-mono text-accent-500 hover:underline inline-flex items-center gap-1">
               <span>+ Ver detalles de materias aprendidas</span>
             </button>
-            <div id="extraInfo" class="hidden mt-3 p-3 bg-zinc-900/40 border border-zinc-800 rounded-lg text-xs font-mono space-y-1">
+            <div id="extraInfo"
+              class="hidden mt-3 p-3 bg-zinc-900/40 border border-zinc-800 rounded-lg text-xs font-mono space-y-1">
               <p>• Modelamiento de bases de datos relacionales (MySQL)</p>
               <p>• Programación Orientada a Objetos en Python</p>
               <p>• Construcción de APIs y lógica Backend con Flask</p>
@@ -388,60 +394,66 @@
 
     <hr class="border-subtle" />
 
-    <!-- Formulario Interactivo de Contacto -->
-    <section id="contacto" class="space-y-6">
-      <h2 class="text-xs font-mono uppercase tracking-widest text-zinc-400">/ Contacto</h2>
 
-      <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-8 space-y-6">
-        <div class="space-y-1">
-          <h3 class="text-xl font-semibold text-zinc-100">¿Tienes algún proyecto o consulta?</h3>
-          <p class="text-sm text-zinc-400">Estoy disponible para colaborar o charlar sobre desarrollo web.</p>
+    <section
+      style="background-color: #f6f8fc; padding: 40px 20px; font-family: 'Google Sans', Roboto, Arial, sans-serif; display: flex; justify-content: center;">
+
+      <div
+        style="background-color: #ffffff; border-radius: 24px; padding: 32px; max-width: 480px; width: 100%; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); text-align: center;">
+
+
+        <div style="margin-bottom: 16px;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 12C6 9.79086 7.79086 8 10 8H38C40.2091 8 42 9.79086 42 12V36C42 38.2091 40.2091 40 38 40H10C7.79086 40 6 38.2091 6 36V12Z"
+              fill="#F2F2F2" />
+            <path d="M42 12L24 25L6 12" stroke="#EA4335" stroke-width="4" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M38 8H10C7.79086 8 6 9.79086 6 12V36C6 38.2091 7.79086 40 10 40H38C40.2091 40 42 38.2091 42 36V12C42 9.79086 40.2091 8 38 8Z"
+              stroke="#4285F4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
         </div>
 
-        <form id="contactForm" class="space-y-4 font-mono text-xs max-w-xl">
-          <div class="space-y-1">
-            <label class="block text-zinc-300">Nombre</label>
-            <input type="text" id="formName" required placeholder="Tu nombre" class="w-full bg-zinc-950 border border-zinc-800 rounded p-2.5 text-zinc-100 focus:outline-none focus:border-accent-500" />
-          </div>
+        <h2 style="color: #1f1f1f; font-size: 24px; margin-bottom: 8px; font-weight: 500;">¿Tienes alguna pregunta?</h2>
+        <p style="color: #444746; font-size: 14px; margin-bottom: 28px; line-height: 1.5;">
+          Envíame un correo electrónico directo y te responderé lo antes posible.
+        </p>
 
-          <div class="space-y-1">
-            <label class="block text-zinc-300">Correo Electrónico</label>
-            <input type="email" id="formEmail" required placeholder="tu@email.com" class="w-full bg-zinc-950 border border-zinc-800 rounded p-2.5 text-zinc-100 focus:outline-none focus:border-accent-500" />
-          </div>
 
-          <div class="space-y-1">
-            <label class="block text-zinc-300">Mensaje</label>
-            <textarea id="formMessage" rows="4" required placeholder="Escribe tu mensaje..." class="w-full bg-zinc-950 border border-zinc-800 rounded p-2.5 text-zinc-100 focus:outline-none focus:border-accent-500"></textarea>
-          </div>
+        <a href="mailto:tuemail@gmail.com?subject=Consulta%20desde%20la%20web"
+          style="display: inline-flex; align-items: center; gap: 12px; background-color: #c2e7ff; color: #001d35; text-decoration: none; padding: 16px 24px; border-radius: 16px; font-weight: 500; font-size: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background-color 0.2s;">
 
-          <button type="submit" class="bg-accent-500 hover:bg-accent-600 text-white font-medium px-5 py-2.5 rounded transition-colors">
-            Enviar Mensaje
-          </button>
-          
-          <div id="formFeedback" class="hidden text-emerald-400 font-mono text-xs pt-1">
-            ✓ ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
-          </div>
-        </form>
 
-        <div class="flex items-center space-x-4 pt-4 border-t border-zinc-800/60">
-          <a href="https://github.com/squirrel286" target="_blank"
-            class="p-3 bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/50 rounded-lg text-zinc-200 transition-colors"
-            title="GitHub">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/randy-cortinez-166336291/" target="_blank"
-            class="p-3 bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/50 rounded-lg text-zinc-200 transition-colors"
-            title="LinkedIn">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-            </svg>
-          </a>
-        </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+          </svg>
+
+          Contacta conmigo
+        </a>
+
       </div>
+    </section>
+    <div class="flex items-center space-x-4 pt-4 border-t border-zinc-800/60">
+      <a href="https://github.com/squirrel286" target="_blank"
+        class="p-3 bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/50 rounded-lg text-zinc-200 transition-colors"
+        title="GitHub">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path
+            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/randy-cortinez-166336291/" target="_blank"
+        class="p-3 bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700/50 rounded-lg text-zinc-200 transition-colors"
+        title="LinkedIn">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg>
+      </a>
+    </div>
+    </div>
     </section>
 
   </main>
@@ -450,17 +462,18 @@
     <p>© 2026 Randy Cortinez.</p>
   </footer>
 
-  <!-- Modal / Ventana Emergente con enlace dinámico a GitHub -->
-  <div id="projectModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+  <div id="projectModal"
+    class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-zinc-900 border border-zinc-800 max-w-lg w-full p-6 rounded-2xl relative space-y-4">
-      <button id="closeModal" class="absolute top-4 right-4 text-zinc-400 hover:text-white font-mono text-base">✕</button>
+      <button id="closeModal"
+        class="absolute top-4 right-4 text-zinc-400 hover:text-white font-mono text-base">✕</button>
       <h3 id="modalTitle" class="text-xl font-bold text-zinc-100 font-mono"></h3>
       <p id="modalTech" class="text-xs text-accent-500 font-mono"></p>
       <p id="modalDesc" class="text-sm text-zinc-300 font-sans leading-relaxed"></p>
-      
+
       <div class="pt-3 border-t border-zinc-800">
-        <a id="modalRepoLink" href="#" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center space-x-2 text-xs font-mono text-accent-500 hover:underline">
+        <a id="modalRepoLink" href="#" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center space-x-2 text-xs font-mono text-accent-500 hover:underline">
           <span>Ver repositorio en GitHub</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -473,7 +486,6 @@
   <script>
     window.addEventListener('DOMContentLoaded', () => {
 
-      // --- ANIMACIÓN CANVAS DVD ---
       const canvas = document.getElementById('dvdCanvas');
       if (canvas) {
         const ctx = canvas.getContext('2d');
@@ -488,12 +500,12 @@
         window.addEventListener('resize', resizeCanvas);
 
         const iconsData = [
-          { name: 'HTML5', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-          { name: 'CSS3', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-          { name: 'JavaScript', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-          { name: 'Python', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-          { name: 'Flask', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
-          { name: 'GitHub', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' }
+          {name: 'HTML5', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'},
+          {name: 'CSS3', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'},
+          {name: 'JavaScript', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'},
+          {name: 'Python', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'},
+          {name: 'Flask', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg'},
+          {name: 'GitHub', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg'}
         ];
 
         const icons = [];
@@ -504,7 +516,7 @@
           img.src = iconInfo.url;
           const speed = 0.6;
           const angle = (index * (Math.PI * 2 / iconsData.length)) + 0.4;
-          
+
           icons.push({
             img: img,
             name: iconInfo.name,
@@ -544,14 +556,12 @@
         animate();
       }
 
-      // --- Cambio de Tema ---
       const themeToggleBtn = document.getElementById('themeToggleBtn');
       themeToggleBtn.addEventListener('click', () => {
         const isDark = document.documentElement.classList.toggle('dark');
         themeToggleBtn.textContent = isDark ? '🌙' : '☀️';
       });
 
-      // --- Contadores Animados ---
       const counters = document.querySelectorAll('.counter');
       counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
@@ -569,7 +579,6 @@
         updateCounter();
       });
 
-      // --- Filtro de Proyectos ---
       const filterBtns = document.querySelectorAll('.filter-btn');
       const projectCards = document.querySelectorAll('.project-card');
 
@@ -595,7 +604,6 @@
         });
       });
 
-      // --- Mostrar / Ocultar Información ---
       const toggleInfoBtn = document.getElementById('toggleInfoBtn');
       const extraInfo = document.getElementById('extraInfo');
 
@@ -610,7 +618,6 @@
         }
       });
 
-      // --- Formulario Interactivo ---
       const contactForm = document.getElementById('contactForm');
       const formFeedback = document.getElementById('formFeedback');
 
@@ -623,7 +630,6 @@
         }, 4000);
       });
 
-      // --- Modal / Ventana Emergente + Enlace a GitHub ---
       const modal = document.getElementById('projectModal');
       const closeModal = document.getElementById('closeModal');
       const modalTitle = document.getElementById('modalTitle');
@@ -654,4 +660,5 @@
     });
   </script>
 </body>
+
 </html>
